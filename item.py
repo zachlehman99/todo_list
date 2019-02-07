@@ -22,4 +22,4 @@ class Item(object):
     def mark_item():
         # Tack onto the end of the file to-do, by when, mark_item, then time
         lists = open("todos.txt", "a")
-        print(lists.write('False'), lists.write('\n'))
+        print(lists.write('not completed'), lists.write('\n'))

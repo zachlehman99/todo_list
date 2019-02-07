@@ -25,14 +25,17 @@ class Manager(object):
         lists = open("todos.txt", "a")
         task = input('What is your todo? ')
         # print(lists.write(item.Item.time()))
-        print(lists.write(task + ' '))
+        print(lists.write(task + ' ')), (lists.write('not completed'), lists.write('\n')), item.Item.time()
         lists.close()
 
     def completed():
-        lists = open("todos.txt", "a")
-        print(lists.write(True))
+        lists = open("todos.txt", "r+")
+        reading = input("What do you want to mark complete? ")
+        lists.readline(int(reading)).replace('not completed', 'completed')
+        # fun= lists.reading.replace('not completed', 'completed')
+        # lists.write(fun)
+        # print(lists.write('completed'))
         lists.close()
-
 
 def start():
     print("""Which one do you want?
@@ -51,3 +54,4 @@ def start():
         return Manager.completed()
 
 # readline and delete line
+# replace false with true?
