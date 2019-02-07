@@ -17,12 +17,11 @@ class Manager(object):
         print(lists.write(task)), item.Item.mark_item(), lists.write('\n'), item.Item.time()
         lists.close()
 
-    # def completed():
-    #     lists = open("todos.txt", "r+")
-    #     lines = lists.readlines()
-    #     reading = input("What do you want to mark complete? ")
-    #     strip.add(3)
-    #     lists.close()
+    def completed():
+        lists = open("todos.txt", "r+")
+        lines = lists.readlines()
+        reading = input("What do you want to mark complete? Line Number? ")
+        lists.close()
 
 def start():
     print("""Which one do you want?
