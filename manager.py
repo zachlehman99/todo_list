@@ -23,14 +23,14 @@ class Manager(object):
     #
     def add():
         lists = open("todos.txt", "a")
-        task = input('-> ')
+        task = input('What is your todo? ')
         # print(lists.write(item.Item.time()))
         print(lists.write(task + ' '))
         lists.close()
 
     def completed():
-        lists = open("todos.txt", "w")
-        print(lists.write)
+        lists = open("todos.txt", "a")
+        print(lists.write(True))
         lists.close()
 
 
@@ -49,3 +49,5 @@ def start():
         return Manager.add()
     elif beginning == '3':
         return Manager.completed()
+
+# readline and delete line

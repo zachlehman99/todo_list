@@ -11,10 +11,15 @@ class Item(object):
 
     def time():
         with open("todos.txt", 'a') as now_time:
-            if manager.Manager.add() == ' ':
-                return ''
-            elif manager.Manager.add() == 'exit':
-                return exit(0)
-            else:
-                return now_time.write(str(datetime.datetime.now())), now_time.write('\n')
+            # if manager.Manager.add() == len(task) == 0:
+            #     return ''
+            # elif manager.Manager.add() == 'exit':
+            #     return exit(0)
+            # else:
+                return now_time.write(str(datetime.datetime.now())), now_time.write(' ')
                 now_time.close()
+
+    def mark_item():
+        # Tack onto the end of the file to-do, by when, mark_item, then time
+        lists = open("todos.txt", "a")
+        print(lists.write('False'), lists.write('\n'))
