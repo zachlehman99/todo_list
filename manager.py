@@ -2,44 +2,29 @@
 # Print all of the to-do items in the list.
 # Add a new item to the list.
 # Mark an item as completed.
-# f = open("todos.txt", "r")
-# print(f.read('zach'))
 import item
 
 class Manager(object):
 
-    # The skeleton of the manager
-    def __init__(self, list, completed):
-        self.list = list
-        self.completed = completed
-
-    # This so the file can be read through the terminal
     def to_do_list():
         lists = open("todos.txt", "r")
         print(lists.read())
         lists.close()
 
-    # They add it through the terminal and the input goes into the text file through the input
-    #
     def add():
         lists = open("todos.txt", "a")
-        task = input('What is your todo? ')
-        # print(lists.write(item.Item.time()))
-        print(lists.write(task + ' ')), (lists.write('not completed'), lists.write('\n')), item.Item.time()
+        task = input('What is your todo? Item and time? ')
+        print(lists.write(task)), item.Item.mark_item(), lists.write('\n'), item.Item.time()
         lists.close()
 
     def completed():
-        lists = open("todos.txt", "r")
+        lists = open("todos.txt", "r+")
         lines = lists.readlines()
-        lists.close()
-        lists = open("todos.txt","r+")
-        for line in lines:
-          if line == "not":
-            f.write(line)
         reading = input("What do you want to mark complete? ")
-        # fun= reading.replace('not completed', 'completed')
+        fun= reading.replace('not completed', 'completed')
         # lists.write(fun)
-        print(line.write(replace('not completed', 'completed')))
+        # print(fun.write(replace('not completed', 'completed')))
+        lists.truncate(0)
         lists.close()
 
 def start():
@@ -47,6 +32,7 @@ def start():
              1. See the to-do list
              2. Add to the to-do list
              3. Change status of completion
+             4. Finished with a todo
              """)
 
     beginning = input('-> ')
@@ -57,6 +43,8 @@ def start():
         return Manager.add()
     elif beginning == '3':
         return Manager.completed()
-
-# readline and delete line
-# replace false with true?
+    elif beginning == '4':
+        finished = input('What did you complete? ')
+        lists = open("todos.txt", "a")
+        print(lists.write(finished + ' completed' + '\n')), item.Item.time()
+        lists.close()
