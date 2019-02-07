@@ -29,12 +29,17 @@ class Manager(object):
         lists.close()
 
     def completed():
-        lists = open("todos.txt", "r+")
+        lists = open("todos.txt", "r")
+        lines = lists.readlines()
+        lists.close()
+        lists = open("todos.txt","r+")
+        for line in lines:
+          if line == "not":
+            f.write(line)
         reading = input("What do you want to mark complete? ")
-        lists.readline(int(reading)).replace('not completed', 'completed')
-        # fun= lists.reading.replace('not completed', 'completed')
+        # fun= reading.replace('not completed', 'completed')
         # lists.write(fun)
-        # print(lists.write('completed'))
+        print(line.write(replace('not completed', 'completed')))
         lists.close()
 
 def start():
