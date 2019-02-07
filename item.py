@@ -12,5 +12,15 @@ with open("scr.txt", mode='a') as file:
                (scr, datetime.datetime.now()))
 
 from datetime import datetime
-with open('scr.txt', 'a') as file:
-    file.write('Printed string %s. Recorded at: %s\n' % scr %datetime.now())
+with open('todos.txt', 'a') as main:
+    main.write('Printed string %s. Recorded at: %s\n' % scr %datetime.now())
+
+
+from tabulate import tabulate
+outputList = dictOfOutputs.items()
+table = outputList
+print tabulate(table)
+
+f = open('table.txt', 'w')
+f.write(tabulate(table))
+f.close()

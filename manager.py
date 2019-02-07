@@ -20,12 +20,12 @@ class Manager(object):
     #
     def add():
         lists = open("todos.txt", "a")
-        f = input('-> ')
-        print(lists.write(f))
+        task = input('-> ')
+        print(lists.write(task + '\n'))
 
-    def completed(self):
-        lists = open("todos.txt", "a")
-        print(lists)
+    def completed():
+        lists = open("todos.txt", "w")
+        print(lists.write)
 
 
 def start():
@@ -42,4 +42,4 @@ def start():
     elif beginning == '2':
         return Manager.add()
     elif beginning == '3':
-        return Manager.to_do_list()
+        return Manager.completed()
