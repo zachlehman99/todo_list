@@ -17,15 +17,12 @@ class Manager(object):
         print(lists.write(task)), item.Item.mark_item(), lists.write('\n'), item.Item.time()
         lists.close()
 
-    def completed():
-        lists = open("todos.txt", "r+")
-        lines = lists.readlines()
-        reading = input("What do you want to mark complete? ")
-        fun= reading.replace('not completed', 'completed')
-        # lists.write(fun)
-        # print(fun.write(replace('not completed', 'completed')))
-        lists.truncate(0)
-        lists.close()
+    # def completed():
+    #     lists = open("todos.txt", "r+")
+    #     lines = lists.readlines()
+    #     reading = input("What do you want to mark complete? ")
+    #     strip.add(3)
+    #     lists.close()
 
 def start():
     print("""Which one do you want?
@@ -33,6 +30,7 @@ def start():
              2. Add to the to-do list
              3. Change status of completion
              4. Finished with a todo
+             5. Stored Text
              """)
 
     beginning = input('-> ')
@@ -48,3 +46,5 @@ def start():
         lists = open("todos.txt", "a")
         print(lists.write(finished + ' completed' + '\n')), item.Item.time()
         lists.close()
+    else:
+        return item.Item.store_text()

@@ -17,6 +17,7 @@ class Item(object):
         print(lists.write('Not completed '))
         lists.close()
 
-    def text():
+    def store_text():
         lists = open("todos.txt", "r")
-        close.lists()
+        print(lists.read())
+        lists.close()
