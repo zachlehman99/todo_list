@@ -10,6 +10,11 @@ class Item(object):
     #import datetime
 
     def time():
-        with open("todos.txt", 'a') as file:
-            file.write(str(datetime.datetime.now()))
-            file.write('\n')
+        with open("todos.txt", 'a') as now_time:
+            if manager.Manager.add() == ' ':
+                return ''
+            elif manager.Manager.add() == 'exit':
+                return exit(0)
+            else:
+                return now_time.write(str(datetime.datetime.now())), now_time.write('\n')
+                now_time.close()

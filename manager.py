@@ -17,6 +17,7 @@ class Manager(object):
     def to_do_list():
         lists = open("todos.txt", "r")
         print(lists.read())
+        lists.close()
 
     # They add it through the terminal and the input goes into the text file through the input
     #
@@ -25,10 +26,12 @@ class Manager(object):
         task = input('-> ')
         # print(lists.write(item.Item.time()))
         print(lists.write(task + ' '))
+        lists.close()
 
     def completed():
         lists = open("todos.txt", "w")
         print(lists.write)
+        lists.close()
 
 
 def start():
