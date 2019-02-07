@@ -21,6 +21,7 @@ class Manager(object):
         lists = open("todos.txt", "r+")
         lines = lists.readlines()
         reading = input("What do you want to mark complete? Line Number? ")
+        lists.truncate(0)
         lists.close()
 
 def start():
