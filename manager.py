@@ -4,6 +4,8 @@
 # Mark an item as completed.
 # f = open("todos.txt", "r")
 # print(f.read('zach'))
+import item
+
 class Manager(object):
 
     # The skeleton of the manager
@@ -21,7 +23,8 @@ class Manager(object):
     def add():
         lists = open("todos.txt", "a")
         task = input('-> ')
-        print(lists.write(task + '\n'))
+        # print(lists.write(item.Item.time()))
+        print(lists.write(task + ' '))
 
     def completed():
         lists = open("todos.txt", "w")
