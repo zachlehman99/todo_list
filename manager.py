@@ -21,15 +21,22 @@ class Manager(object):
 
     def completed():
         lists = open("todos.txt", "r+")
-        lines = lists.readlines()
+        lists.readlines()
         reading = input("What do you want to mark complete? What Todo? ")
-        str(lines.endswith(reading))
-        lists.write(reading.strip('Not')).replace
+        # lines.remove(lines)
+        str(lists.write(reading)).replace('Not Completed', 'Completed')
         lists.close()
 
 # lists.endswith(reading)
 # For 1st line. print(lists[stripper])
-
+# with open('test.txt', 'r+') as f:
+#     t = f.read()
+#     to_delete = input('What should we delete? : ').strip()   # input PSP0101
+#     f.seek(0)
+#     for line in t.split('\n'):
+#         if line != to_delete:
+#             f.write(line + '\n')
+#     f.truncate()
 
 
 def start():
