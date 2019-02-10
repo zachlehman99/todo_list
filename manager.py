@@ -30,21 +30,27 @@ def start():
              2. Add to the to-do list
              3. Change status of completion
              4. Finished with a todo
-             5. Stored Text
+             5. Exit
+             6. Stored Text
              """)
+    while True:
+        beginning = input('-> ')
 
-    beginning = input('-> ')
-
-    if beginning == '1':
-        return Manager.to_do_list()
-    elif beginning == '2':
-        return Manager.add()
-    elif beginning == '3':
-        return Manager.completed()
-    elif beginning == '4':
-        finished = input('What did you complete? ')
-        lists = open("todos.txt", "a")
-        print(lists.write(finished + ' completed' + '\n')), item.Item.time()
-        lists.close()
-    else:
-        return item.Item.store_text()
+        if beginning == '1':
+            return Manager.to_do_list()
+        elif beginning == '2':
+            return Manager.add()
+        elif beginning == '3':
+            return Manager.completed()
+        elif beginning == '4':
+            finished = input('What did you complete? ')
+            lists = open("todos.txt", "a")
+            print(lists.write(finished + ' completed' + '\n')), item.Item.time()
+            lists.close()
+        elif beginning == '5':
+            print('Have a great day!')
+            exit(0)
+        elif beginning == '6':
+            return item.Item.store_text()
+        else:
+            print('What was that?')
