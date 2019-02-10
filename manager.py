@@ -15,19 +15,19 @@ class Manager(object):
 
     def add():
         lists = open("todos.txt", "a")
-        task = input('What is your todo? Item and time? ')
+        task = input('What is your todo? Time and Item? ')
         next = print(lists.write(task)), item.Item.mark_item(), lists.write('\n'), item.Item.time()
         lists.close()
 
     def completed():
         lists = open("todos.txt", "r+")
         lines = lists.readlines()
-        reading = input("What do you want to mark complete? Line Number? ")
-        stripper = reading.strip('Not')
-        final = print(lists[stripper])
-        lists.write(final)
+        reading = input("What do you want to mark complete? What Todo? ")
+        str(lines.endswith(reading))
+        lists.write(reading.strip('Not')).replace
         lists.close()
 
+# lists.endswith(reading)
 # For 1st line. print(lists[stripper])
 
 
