@@ -8,7 +8,7 @@ class Manager(object):
 
     def to_do_list():
         lists = open("todos.txt", "r")
-        print(lists.read())
+        print(lists.readline())
         lists.close()
 
     def add():
@@ -19,9 +19,9 @@ class Manager(object):
 
     def completed():
         lists = open("todos.txt", "r+")
-        lines = lists.readlines()
+        lines = lists.readline()
         reading = input("What do you want to mark complete? Line Number? ")
-        lists.truncate(0)
+        print(lines.strip('Not'))
         lists.close()
 
 def start():
@@ -33,24 +33,24 @@ def start():
              5. Exit
              6. Stored Text
              """)
-    while True:
-        beginning = input('-> ')
 
-        if beginning == '1':
-            return Manager.to_do_list()
-        elif beginning == '2':
-            return Manager.add()
-        elif beginning == '3':
-            return Manager.completed()
-        elif beginning == '4':
-            finished = input('What did you complete? ')
-            lists = open("todos.txt", "a")
-            print(lists.write(finished + ' completed' + '\n')), item.Item.time()
-            lists.close()
-        elif beginning == '5':
-            print('Have a great day!')
-            exit(0)
-        elif beginning == '6':
-            return item.Item.store_text()
-        else:
-            print('What was that?')
+    beginning = input('-> ')
+
+    if beginning == '1':
+        return Manager.to_do_list()
+    elif beginning == '2':
+        return Manager.add()
+    elif beginning == '3':
+        return Manager.completed()
+    elif beginning == '4':
+        finished = input('What did you complete? ')
+        lists = open("todos.txt", "a")
+        print(lists.write(finished + ' completed' + '\n')), item.Item.time()
+        lists.close()
+    elif beginning == '5':
+        print('Have a great day!')
+        exit(0)
+    elif beginning == '6':
+        return item.Item.store_text()
+    else:
+        print('What was that?')
