@@ -8,21 +8,29 @@ class Manager(object):
 
     def to_do_list():
         lists = open("todos.txt", "r")
-        print(lists.readline())
+        print(lists.readlines())
+        next = str(lists.readlines())
+        next.split(',')
         lists.close()
 
     def add():
         lists = open("todos.txt", "a")
         task = input('What is your todo? Item and time? ')
-        print(lists.write(task)), item.Item.mark_item(), lists.write('\n'), item.Item.time()
+        next = print(lists.write(task)), item.Item.mark_item(), lists.write('\n'), item.Item.time()
         lists.close()
 
     def completed():
         lists = open("todos.txt", "r+")
-        lines = lists.readline()
+        lines = lists.readlines()
         reading = input("What do you want to mark complete? Line Number? ")
-        print(lines.strip('Not'))
+        stripper = reading.strip('Not')
+        final = print(lists[stripper])
+        lists.write(final)
         lists.close()
+
+# For 1st line. print(lists[stripper])
+
+
 
 def start():
     print("""Which one do you want?
@@ -54,3 +62,6 @@ def start():
         return item.Item.store_text()
     else:
         print('What was that?')
+
+# readline(): It returns the entire line from the file. line = f.readline()
+# readlines(): It returns a List containing all lines. lines = f.readlines() print(lines[0]) → For 1st line. print(lines[1]) → For 2nd line (assuming that the file has multiple lines)
