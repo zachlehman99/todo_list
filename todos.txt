@@ -1,7 +1,4 @@
 Not completed 2019-02-10 10:30:53.139672 8pm, Bathroom
 Not completed 2019-02-10 10:31:11.258027 9pm, Shoe Shopping
 Not completed 2019-02-10 10:55:02.153004 5pm, Hockey Practice
-2019-02-10 10:55:48.737339 Hockey Practice completed
-Not completed 2019-02-10 11:00:31.214895 2pm, Golf
-2019-02-10 13:03:11.288351 Golf completed
-Golf Completed
+2019-02-10 19:48:14.773889 Hockey Practice completed

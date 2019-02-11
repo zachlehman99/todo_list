@@ -20,23 +20,10 @@ class Manager(object):
         lists.close()
 
     def completed():
-        lists = open("todos.txt", "r+")
-        lists.readlines()
-        reading = input("What do you want to mark complete? What Todo? ")
-        # lines.remove(lines)
-        str(lists.write(reading)).replace('Not Completed', 'Completed')
+        finished = input('What did you complete? ')
+        lists = open("todos.txt", "a")
+        print(lists.write(finished + ' completed' + '\n')), item.Item.time()
         lists.close()
-
-# lists.endswith(reading)
-# For 1st line. print(lists[stripper])
-# with open('test.txt', 'r+') as f:
-#     t = f.read()
-#     to_delete = input('What should we delete? : ').strip()   # input PSP0101
-#     f.seek(0)
-#     for line in t.split('\n'):
-#         if line != to_delete:
-#             f.write(line + '\n')
-#     f.truncate()
 
 
 def start():
@@ -44,9 +31,8 @@ def start():
              1. See the to-do list
              2. Add to the to-do list
              3. Change status of completion
-             4. Finished with a todo
-             5. Exit
-             6. Stored Text
+             4. Exit
+             5. Stored Text
              """)
 
     beginning = input('-> ')
@@ -58,17 +44,9 @@ def start():
     elif beginning == '3':
         return Manager.completed()
     elif beginning == '4':
-        finished = input('What did you complete? ')
-        lists = open("todos.txt", "a")
-        print(lists.write(finished + ' completed' + '\n')), item.Item.time()
-        lists.close()
-    elif beginning == '5':
         print('Have a great day!')
         exit(0)
-    elif beginning == '6':
+    elif beginning == '5':
         return item.Item.store_text()
     else:
         print('What was that?')
-
-# readline(): It returns the entire line from the file. line = f.readline()
-# readlines(): It returns a List containing all lines. lines = f.readlines() print(lines[0]) → For 1st line. print(lines[1]) → For 2nd line (assuming that the file has multiple lines)
