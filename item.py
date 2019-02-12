@@ -21,3 +21,25 @@ class Item(object):
         lists = open("todos.txt", "r")
         print(lists.read())
         lists.close()
+
+    def delete_everything():
+        goodbye = input('Are you sure you want everything deleted? Ctrl c if you do not. ')
+        lists = open("todos.txt", "r+")
+        lists.truncate(0)
+        lists.close()
+
+    def mark_something():
+        finished = input('What activity did you complete? ')
+        lists = open("todos.txt", "a")
+        print(lists.write(finished + ' completed' + '\n')), Item.time()
+        lists.close()
+
+    def get_rid(text):
+        lists = open("todos.txt", "r+")
+        file_text = lists.readlines()
+        lists.seek(0)
+        for i in file_text:
+            if not text in i:
+                lists.write(i)
+        lists.truncate()
+        lists.close()

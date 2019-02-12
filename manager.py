@@ -9,9 +9,8 @@ class Manager(object):
     def to_do_list():
         lists = open("todos.txt", "r")
         print(lists.readlines())
-        next = str(lists.readlines())
-        next.split(',')
         lists.close()
+        return start()
 
     def add():
         lists = open("todos.txt", "a")
@@ -20,20 +19,27 @@ class Manager(object):
         lists.close()
 
     def completed():
-        finished = input('What did you complete? ')
-        lists = open("todos.txt", "a")
-        print(lists.write(finished + ' completed' + '\n')), item.Item.time()
-        lists.close()
+        lists = open("todos.txt", "r+")
+        reading = lists.read()
+        delete_line = input('What did you complete? ')
+        if delete_line == '':
+            lists.close()
+            return start()
+        else:
+            item.Item.get_rid(delete_line)
+            lists.close()
+            return start()
 
 
 def start():
     print("""Which one do you want?
-             1. See the to-do list
-             2. Add to the to-do list
-             3. Change status of completion
+             1. See the todo list
+             2. Add to the todo list
+             3. Delete a line from the todo list
              4. Exit
              5. Stored Text
              6. Delete Everything
+             7. Mark Something Complete
              """)
 
     beginning = input('-> ')
@@ -50,9 +56,9 @@ def start():
     elif beginning == '5':
         return item.Item.store_text()
     elif beginning == '6':
-        goodbye = input('Are you sure you want everything deleted? Ctrl c if you do not. ')
-        lists = open("todos.txt", "r+")
-        lists.truncate(0)
-        lists.close()
+        return item.Item.delete_everything()
+    elif beginning == '7':
+        return item.Item.mark_something()
     else:
         print('What was that?')
+        return start()
