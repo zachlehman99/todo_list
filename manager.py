@@ -33,6 +33,7 @@ def start():
              3. Change status of completion
              4. Exit
              5. Stored Text
+             6. Delete Everything
              """)
 
     beginning = input('-> ')
@@ -48,5 +49,10 @@ def start():
         exit(0)
     elif beginning == '5':
         return item.Item.store_text()
+    elif beginning == '6':
+        goodbye = input('Are you sure you want everything deleted? Ctrl c if you do not. ')
+        lists = open("todos.txt", "r+")
+        lists.truncate(0)
+        lists.close()
     else:
         print('What was that?')
